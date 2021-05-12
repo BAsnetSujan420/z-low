@@ -65,14 +65,37 @@ body {
 .menu-item__sub {
   background: var(--grey);
   overflow: hidden;
-  transition:: max-height .3s;
+  transition: max-height 0.3s;
+  max-height: 0;
 }
 
 .menu-item__sub a {
-    display: block;
-    padding: 1rem 1.6rem;
-    color: white;
-    font-size: 0.9rem;
-    position: relative;
-    border-bottom: 2px solid var(--light-grey);
+  display: block;
+  padding: 1rem 1.6rem;
+  color: white;
+  font-size: 0.9rem;
+  position: relative;
+  border-bottom: 2px solid var(--light-grey);
+}
+
+.menu-item__sub a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0.4rem;
+  height: 100%;
+  background: var(--blue);
+  transform: translateX(-0.4rem);
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.menu-item__sub a:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.menu-item:target .menu-item__sub {
+  max-height: 10em;
 }
