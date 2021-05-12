@@ -34,6 +34,7 @@ body {
 .menu-item {
   list-style: none;
   border-top: 1px solid var(--dark-blue);
+  overflow: hidden;
 }
 
 .btn {
@@ -57,4 +58,21 @@ body {
 
 .btn i {
   margin-right: 1rem;
+}
+
+/*Submenu*/
+
+.menu-item__sub {
+  background: var(--grey);
+  overflow: hidden;
+  transition:: max-height .3s;
+}
+
+.menu-item__sub a {
+    display: block;
+    padding: 1rem 1.6rem;
+    color: white;
+    font-size: 0.9rem;
+    position: relative;
+    border-bottom: 2px solid var(--light-grey);
 }
